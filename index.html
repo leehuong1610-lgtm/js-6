@@ -45,7 +45,6 @@
             box-sizing: border-box;
             box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            text-overflow: ellipsis;
             white-space: nowrap;
         }
 
@@ -186,12 +185,17 @@
     <script>
         const manHinh = document.getElementById('display');
 
+        function cuonCuoi() {
+            manHinh.scrollLeft = manHinh.scrollWidth;
+        }
+
         function themKyTu(chu) {
             if (manHinh.value === "0" || manHinh.value === "Error") {
                 manHinh.value = chu;
             } else {
                 manHinh.value = manHinh.value + chu;
             }
+            cuonCuoi();
         }
 
         function xoaHet() {
